@@ -53,6 +53,11 @@
   background: #D9E6E5;
 }
 
+.user-questions-count {
+  background: #D9E6E5;
+  padding: 10px 0;
+}
+
 @media (max-width: 960px) {
   .user-question-form {
     margin-left: 0;
