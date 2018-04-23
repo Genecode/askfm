@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
   # Ошибки валидаций можно посмотреть методом errors.
 
   # Преобразование в нижний регистр для задачи 49-2
-  before_validation { username.downcase }
+  before_validation { username.try(:downcase) }
 
   # Перед сохранением объекта в базу, создаем зашифрованный пароль, который
   # будет хранится в БД.
