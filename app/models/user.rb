@@ -46,8 +46,8 @@ class User < ActiveRecord::Base
 
   #Добавляем валидации для домашнего задания
   validates :username, length: { maximum: 40 }
-  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
-  validates :username, format: { with: /\A[a-z0-9_]+/ }
+  validates :email, format: { with: /.+@.+\..+/i }
+  validates :username, format: { with: /^([a-z0-9_]+)+/ }
 
   # Ошибки валидаций можно посмотреть методом errors.
 
