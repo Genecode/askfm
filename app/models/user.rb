@@ -44,6 +44,11 @@ class User < ActiveRecord::Base
   # снизить число ошибочно введенных паролей.
   validates_confirmation_of :password
 
+  #Добавляем валидации для домашнего задания
+  validates :username, length: { maximum: 40 }
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  validates :username, format: { with: /\A[a-z0-9_]+/ }
+
   # Ошибки валидаций можно посмотреть методом errors.
 
   # Перед сохранением объекта в базу, создаем зашифрованный пароль, который
