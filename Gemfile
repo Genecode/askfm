@@ -7,6 +7,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.8'
 gem 'jquery-rails'
+gem 'tzinfo-data'
+gem 'tzinfo'
 
 group :development, :test do
   gem 'byebug'
