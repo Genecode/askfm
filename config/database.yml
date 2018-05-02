@@ -20,6 +20,13 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+#DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+
 production:
   <<: *default
   database: db/production.sqlite3
+ # url: <%= ENV['DATABASE_URL'] %>
+
+  # database: myapp_production
+  # username: myapp
+  # password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>

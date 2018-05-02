@@ -5,8 +5,9 @@
 
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '4.2.8'
 gem 'jquery-rails'
+gem 'uglifier'
 
 
 group :development, :test do
@@ -22,5 +23,6 @@ end
 
 group :production do
   gem 'pg'
+
 end
 
