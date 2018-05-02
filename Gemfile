@@ -7,14 +7,20 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.8'
 gem 'jquery-rails'
-gem 'tzinfo-data'
-gem 'tzinfo'
+
 
 group :development, :test do
   gem 'byebug'
+  gem 'tzinfo-data'
+  gem 'tzinfo'
+  gem 'sqlite3'
 end
 
 group :development do
-  gem 'sqlite3'
   gem 'web-console', '~> 2.0'
 end
+
+group :production do
+  gem 'pg'
+end
+
