@@ -1,7 +1,7 @@
 # (c) goodprogrammer.ru
 
 # Миграция, создающая сущность (таблицу) вопроса в базе.
-class CreateQuestions < ActiveRecord::Migration
+class CreateQuestions < ActiveRecord::Migration[5.0]
   def change
     # Создает таблицу "questions"
     create_table :questions do |t|
