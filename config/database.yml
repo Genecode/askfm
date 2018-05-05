@@ -23,12 +23,14 @@ test:
 #DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 
 production:
-  adapter: postgresql
-  pool: 5
-  timeout: 5000
-  database: db/production
- # url: <%= ENV['DATABASE_URL'] %>
+   <<: *default
+   database: db/test.sqlite3
 
+ #  adapter: postgresql
+ #  pool: 5
+ # timeout: 5000
+ # database: db/production
+ # url: <%= ENV['DATABASE_URL'] %>
   # database: myapp_production
   # username: myapp
   # password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
