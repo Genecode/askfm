@@ -60,9 +60,18 @@
       <div class="form-action buffer-top">
         <%= f.submit 'Сохранить', class: 'button button-dark button-small' %>
       </div>
+
     <% end %>
+
+    <div class="form-field">
+      <%# Тут кнопка удаления юзера %>
+      <%= link_to "удалить аккаунт", user_path, method: :delete, data: {confirm: 'Вы уверены?'} %>
+    </div>
 
     <%# Подробнее про помощники для создания форм: %>
     <%# http://guides.rubyonrails.org/form_helpers.html %>
   </div>
+
+
+
 </div>

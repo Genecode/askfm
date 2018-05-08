@@ -48,6 +48,7 @@ class User < ActiveRecord::Base
   validates :username, length: { maximum: 40 }
   validates :email, format: { with: /.+@.+\..+/i }
   validates :username, format: { with: /\A[a-z]+_?\d*\z/ }
+  validates :header_color, format: { with: /\A#([a-f0-9]{6})\z/ }
 
   # Ошибки валидаций можно посмотреть методом errors.
 

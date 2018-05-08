@@ -19,6 +19,11 @@
   color: #fff;
 }
 
+.button-red {
+  background: coral;
+  color: crimson;
+}
+
 .button-light {
   background: #00948a;
   color: #fff;
