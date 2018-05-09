@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :load_user, except:[:index, :new, :create]
+  before_action :load_user, except: [:index, :new, :create]
   before_action :authorize_user, except: [:index, :new, :create, :show]
 
   def index
@@ -62,5 +62,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :password, :password_confirmation,
                                  :name, :username, :avatar_url, :header_color)
   end
-
 end
