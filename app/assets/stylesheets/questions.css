@@ -26,7 +26,8 @@
 .question-answer {
 }
 
-.question-date {
+.question-date,
+.question-author {
   color: #a0a0a0;
   font-size: 12px;
 }
@@ -40,4 +41,8 @@
 
 .question-actions a {
   margin-left: 10px;
+}
+
+.question-author {
+  text-align: right;
 }
