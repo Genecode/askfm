@@ -39,10 +39,14 @@ class UsersController < ApplicationController
   # Это действие отзывается, когда пользователь заходит по адресу /users/:id,
   # например /users/1.
   def show
-
     @questions = @user.questions.order(created_at: :desc)
 
     @new_question = @user.questions.build
+  end
+
+  def delete
+    session[:user_id] = nil
+    redirect_to root_url, notice: 'Пользователь удален!' if @user.destroy
   end
 
   def authorize_user
