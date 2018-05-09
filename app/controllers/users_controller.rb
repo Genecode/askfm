@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     @new_question = @user.questions.build
   end
 
-  def delete
+  def destroy
     session[:user_id] = nil
     redirect_to root_url, notice: 'Пользователь удален!' if @user.destroy
   end
