@@ -50,7 +50,8 @@ class UsersController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: 'Пользователь удален!' if @user.destroy
+    @user.destroy!
+    redirect_to root_url, notice: 'Пользователь удален!'
   end
 
   def authorize_user

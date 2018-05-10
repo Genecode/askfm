@@ -75,12 +75,6 @@
 
 <%# Блок со списком вопросов к пользователю %>
 <div class="column-3-4">
-  <div class="user-questions-count buffer-both">
-    <%= "Пользователю #{sklonenie(@questions.count,'задан', 'задано', 'задано', false)}
-        #{sklonenie(@questions.count,'вопрос', 'вопроса', 'вопросов', true)}" %>
-  </div>
-
-
   <div class="user-questions buffer-both">
     <div class="questions-list">
       <%# Обратите внимание, как мы делаем цикл по всем вопросам, точно %>
