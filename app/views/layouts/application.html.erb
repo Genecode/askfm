@@ -29,12 +29,12 @@
       <% if current_user %>
         <%# Даем ссылки на его профиль и на логаут %>
         <%= link_to "@#{current_user.username}", user_path(current_user) %> |
-        <%= link_to 'Выйти', log_out_path %>
+        <%= link_to 'Выйти', sessions_path, data: {method: :delete} %>
       <% else %>
         <%# Если нету — ссылки на регистрацию и логин %>
-        <%= link_to 'Зарегистрироваться', sign_up_path,
+        <%= link_to 'Зарегистрироваться', new_user_path,
                     class: 'button button-light button-small' %>
-        <%= link_to 'Войти', log_in_path,
+        <%= link_to 'Войти', new_sessions_path,
                     class: 'button button-light button-small' %>
       <% end %>
 
