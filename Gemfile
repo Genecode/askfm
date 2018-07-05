@@ -9,7 +9,7 @@ gem 'rails', '5.2.0'
 gem 'jquery-rails'
 gem 'uglifier'
 gem 'rails_12factor'
-gem 'recaptcha', require: 'recaptcha/rails'
+gem 'recaptcha'
 
 group :development, :test do
   gem 'byebug'
