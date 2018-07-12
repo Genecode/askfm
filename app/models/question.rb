@@ -34,7 +34,7 @@ class Question < ActiveRecord::Base
   def create_tags
     transaction do
       self.tags.clear
-      all_hashtags(self.text.concat(" ",self.answer)).each do |tag|
+      all_hashtags("#{self.text} #{self.answer}").each do |tag|
         self.tags << Tag.find_or_create_by(body: tag)
       end
     end
