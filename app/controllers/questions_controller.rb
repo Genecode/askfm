@@ -60,7 +60,9 @@ class QuestionsController < ApplicationController
     user = @question.user
 
     # Удаляем вопрос
+    @question.tags.clear
     @question.destroy
+
 
     # Отправляем пользователя на страницу адресата вопроса с сообщением
     redirect_to user_path(user), notice: 'Вопрос удален :('

@@ -7,7 +7,7 @@
 }
 
 .question-content {
-  padding: 10px 15px;
+  padding: 20px 15px;
 }
 
 .question + .question {
@@ -23,13 +23,15 @@
   color: #005a55;
 }
 
-.question-answer {
-}
-
 .question-date,
-.question-author {
+.question-author,
+.question-tag {
   color: #a0a0a0;
   font-size: 12px;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 .question-actions {
@@ -37,6 +39,7 @@
   border-top: 1px solid #D9E6E5;
   text-align: right;
   padding: 10px 15px;
+  margin-top: 10px;
 }
 
 .question-actions a {
@@ -44,5 +47,5 @@
 }
 
 .question-author {
-  text-align: right;
+  float: right;
 }

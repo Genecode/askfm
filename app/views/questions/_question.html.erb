@@ -16,18 +16,24 @@
       </div>
     <% end %>
 
-    <%# Дата создания вопроса (отформатированная) %>
-    <div class="question-date">
-      <%= l(question.created_at, format: :short) %>
-    </div>
-
-    <%# Автор вопроса %>
-    <% if question.author.present? %>
-      <div class="question-author">
-        Вопрос задал:
-        <%= link_to "#{question.author.username}", user_path(question.author) %>
+      <%# Дата создания вопроса (отформатированная) %>
+      <div class="question-date">
+        <%= l(question.created_at, format: :short) %>
       </div>
-    <% end %>
+      <% #Tags %>
+      <div class="question-tag">
+        <% question.tags.each do |tag| %>
+          <%= render partial: 'tags/tag', object: tag %>
+        <% end %>
+      </div>
+      <%# Автор вопроса %>
+      <% if question.author.present? %>
+        <div class="question-author">
+          Вопрос задал:
+          <%= link_to "#{question.author.username}", user_path(question.author) %>
+        </div>
+      <% end %>
+
   </div>
 
   <%# Если адресат вопроса — текущий пользователь, он может редактировать вопрос %>

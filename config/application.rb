@@ -37,5 +37,6 @@ module Askme
     config.i18n.default_locale = :en
     config.i18n.locale = :ru
     config.i18n.fallbacks = [:en]
+    config.active_record.sqlite3.represent_boolean_as_integer = true
   end
 end

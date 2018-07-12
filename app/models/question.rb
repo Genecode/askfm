@@ -16,6 +16,8 @@ class Question < ActiveRecord::Base
   belongs_to :user
   belongs_to :author, class_name: 'User'
 
+  has_and_belongs_to_many :tags
+
   # Эта валидация препятствует созданию вопросов, у которых нет пользователя
   # если задан пустой текст вопроса (поле text пустое), объект не будет сохранен
   # в базу.
@@ -24,5 +26,22 @@ class Question < ActiveRecord::Base
   # Валидации для домашенго задания
   validates :text, length: { maximum: 255 }
 
-  # Ошибки валидаций можно посмотреть методом errors.
+  #Tags
+  after_save :create_tags
+
+  private
+
+  def create_tags
+    transaction do
+      self.tags.clear
+      all_hashtags(self.text.concat(" ",self.answer)).each do |tag|
+        self.tags << Tag.find_or_create_by(body: tag)
+      end
+    end
+  end
+
+  def all_hashtags(str)
+    #Массив хештегов
+    str.downcase.scan(/(?:(?<=\s)|^)#(\w*[A-Za-zа-яА-Я_]+\w*)/).flatten.uniq
+  end
 end

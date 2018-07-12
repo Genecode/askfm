@@ -18,4 +18,12 @@
         </div>
       </div>
   <% end %>
+
+  <% #Tags %>
+  <div class="buffer-both">
+    <h1 class="title-medium">Хэштеги</h1>
+  </div>
+  <div class="tag-list-item">
+    <%= render partial: 'tags/tag', collection: @tags %>
+  </div>
 </div>

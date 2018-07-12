@@ -1,0 +1,11 @@
+<div class="content-wrapper buffer-both text-center">
+  <div class="bufer-both">
+    <h1>Вопросы с тегом #<%= @tag.body %></h1>
+  </div>
+
+  <div class="user-questions buffer-both">
+    <div class="questions-list">
+      <%= render partial: 'questions/question', collection: @questions %>
+    </div>
+  </div>
+</div>

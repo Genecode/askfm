@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :questions, except: [:show, :new, :index]
-  resource :sessions, only: [:new, :create, :destroy]
+  resource :session, only: [:new, :create, :destroy]
+  resources :tags, only: [:index, :show, :destroy]
+
 end

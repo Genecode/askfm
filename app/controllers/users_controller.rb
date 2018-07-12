@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @tags = Tag.joins(:questions)
   end
 
   def new
