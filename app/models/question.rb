@@ -42,6 +42,6 @@ class Question < ActiveRecord::Base
 
   def all_hashtags(str)
     #Массив хештегов
-    str.downcase.scan(/(?:(?<=\s)|^)#(\w*[A-Za-zа-яА-Я_]+\w*)/).flatten.uniq
+    str.downcase.scan(/#[[:word:]]+/).uniq
   end
 end
