@@ -1,28 +1,58 @@
-== README
+# ASKME
+Приложение-клон известного сервиса [ask.fm](https://ask.fm/). Социальная сеть для общения через вопросы другим пользователям и ответам на свои вопросы.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Версия руби и рельс
+Приложение написано на `rails 5.1.5`, `ruby 2.4.1 `.
 
-Things you may want to cover:
+## Особенности
+* Технологии: HTML, CSS, JS, Ruby on rails
 
-* Ruby version
+* Views - Bootstrap фреймворк 4 версии
 
-* System dependencies
+* i18n локализация
 
-* Configuration
+## Системные зависимости
+* i18n
+* invisible_captcha
+* jquery-rails
+* listen (>= 3.0.5, < 3.2)
+* pg
+* puma (~> 3.7)
+* rails (~> 5.1.5)
+* rails_12factor
+* recaptcha
+* rubocop
+* sqlite3
+* tzinfo-data
+* uglifier
+* web-console (>= 3.3.0)
+  
+## Установка и запуск
+Для запуска в `development` окружении, необходимо иметь установленные `homebrew`, `ruby 2.4.1`, `rvm` или `rbenv`, `rails 5.1.5`, `bundler`. Команды, указанные ниже, выполнять находясь в целевой директории (желаемой директории проекта).
 
-* Database creation
+Клонировать репозиторий
 
-* Database initialization
+``` git clone git@github.com:Anikram/askme.git```
 
-* How to run the test suite
+Установить набор гемов
 
-* Services (job queues, cache servers, search engines, etc.)
+``` bundle ```
 
-* Deployment instructions
+Прогнать миграции базы данных
+ 
+``` bundle exec rails db:migrate```
 
-* ...
+Запустить локальные сервер
+
+``` bundle exec rails server ```
+
+Перейти на страницу `localhost:3000` в браузере.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Базы данных
+В проекте используется база данных `SQLite 3` в `development` окружении и `PostgreSQL` в `production` окружении, для хранения инфомрации о пользователях и вопросах.  
+ 
+## Деплой на Heroku
+Проект настроен для деплоя на хероку.Рабочую версию проекта можно посмотреть на [`Heroku`](https://my-ask-clone.herokuapp.com/)
+
+2018 год
